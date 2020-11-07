@@ -6,10 +6,12 @@ class Bank_Account:
         self.routing_number = routing_number
         self.balance = balance
 
+    # Calculate the amount deposited Added to the balance and prints out the amount you deposited
     def deposit(self, amount):
         self.balance += amount
         print(f"Amount Deposited: ${amount}")
 
+    # Subtract the amount withdrawn from the balance checks if funds are sufficient does the proper calculations if they are not subtracting $10 also this prints out the amount withdrawn
     def withdraw(self, amount):
         self.balance -= amount
         print(f"Amount Withdrawn: ${amount}")
@@ -17,14 +19,17 @@ class Bank_Account:
             print("Insufficient funds.")
             self.balance -= 10
     
+    # Prince out the balance
     def get_balance(self):
         print(f"Balance: ${self.balance}")
 
+    # Adds interest to the account balance
     def add_interest(self):
         balance = self.balance
         interest = balance * 0.00083
         self.balance = self.balance + interest
 
+    # Prints receipt of your account
     def print_receipt(self):
         stars = []
 
@@ -45,16 +50,19 @@ class Bank_Account:
             Balance: {self.balance}
         """)
 
-logan_account = Bank_Account("Logan Reynolds", 1234567890, 875634175796, 197643.45)
+# new account created
+logan_account = Bank_Account("Logan R.", 1234567890, 875634175796, 197643.45)
 logan_account.withdraw(500)
 logan_account.deposit(1000000)
 logan_account.print_receipt()
 
+# new account created
 Joi_account = Bank_Account("Joi The Awesome", 7862354273645, 8273659823756, 13799752578995)
 Joi_account.get_balance()
 Joi_account.add_interest()
 Joi_account.print_receipt()
 
+# new account created to test
 test_account = Bank_Account("Joi The Awesome", 8927365, 82736982345, 857799795)
 test_account.get_balance()
 test_account.add_interest()
