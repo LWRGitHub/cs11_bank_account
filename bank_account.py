@@ -18,28 +18,15 @@ class Bank_Account:
             self.balance -= 10
     
     def get_balance(self):
-        print(self.balance)
+        print(f"Balance: ${self.balance}")
 
     def add_interest(self):
-        interest = self.balance * 0.00083
-        self.balance += interest
+        balance = self.balance
+        interest = balance * 0.00083
+        self.balance = self.balance + interest
 
     def print_receipt(self):
         stars = []
-        # account_num = self.account_number
-        # len_list_account = list(len(str(account_num)))
-        # account_num_str_list = list(str(account_num))
-        # for i in len_list_account:
-        #     if i < len(len_list_account) - 4:
-        #         stars += "*"
-        #     elif i == len(len_list_account) - 4:
-        #         stars += account_num_str_list[i]
-        #     elif i == len(len_list_account) - 3:
-        #         stars += account_num_str_list[i]
-        #     elif i == len(len_list_account) - 2:
-        #         stars += account_num_str_list[i]
-        #     elif i == len(len_list_account) - 1:
-        #         stars += account_num_str_list[i]
 
         for i in str(self.account_number):
             stars.append("*")
@@ -59,7 +46,17 @@ class Bank_Account:
         """)
 
 logan_account = Bank_Account("Logan Reynolds", 1234567890, 875634175796, 197643.45)
-
 logan_account.withdraw(500)
 logan_account.deposit(1000000)
 logan_account.print_receipt()
+
+Joi_account = Bank_Account("Joi The Awesome", 7862354273645, 8273659823756, 13799752578995)
+Joi_account.get_balance()
+Joi_account.add_interest()
+Joi_account.print_receipt()
+
+test_account = Bank_Account("Joi The Awesome", 8927365, 82736982345, 857799795)
+test_account.get_balance()
+test_account.add_interest()
+test_account.deposit(1000000)
+test_account.print_receipt()
