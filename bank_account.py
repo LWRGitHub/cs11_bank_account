@@ -1,12 +1,11 @@
 import random
 class Bank_Account:
-    account_number = ""
-    for i in range(8):
-        account_number += str(random.randrange(0, 9))
-    account_number = int(account_number)
-    print(account_number)
     routing_number = 927485027
     def __init__(self, full_name, balance):
+        self.account_number = ""
+        for i in range(8):
+            self.account_number += str(random.randrange(0, 9))
+        self.account_number = int(self.account_number)
         self.full_name = full_name
         self.balance = balance
 
