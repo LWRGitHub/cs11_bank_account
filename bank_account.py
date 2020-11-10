@@ -1,9 +1,13 @@
-
+import random
 class Bank_Account:
-    def __init__(self, full_name, account_number, routing_number, balance):
+    account_number = ""
+    for i in range(8):
+        account_number += str(random.randrange(0, 9))
+    account_number = int(account_number)
+    print(account_number)
+    routing_number = 927485027
+    def __init__(self, full_name, balance):
         self.full_name = full_name
-        self.account_number = account_number
-        self.routing_number = routing_number
         self.balance = balance
 
     # Calculate the amount deposited Added to the balance and prints out the amount you deposited
@@ -51,19 +55,19 @@ class Bank_Account:
         """)
 
 # new account created
-logan_account = Bank_Account("Logan R.", 1234567890, 875634175796, 197643.45)
+logan_account = Bank_Account("Logan R.", 197643.45)
 logan_account.withdraw(500)
 logan_account.deposit(1000000)
 logan_account.print_receipt()
 
 # new account created
-Joi_account = Bank_Account("Joi The Awesome", 7862354273645, 8273659823756, 13799752578995)
+Joi_account = Bank_Account("Joi The Awesome", 13799752578995)
 Joi_account.get_balance()
 Joi_account.add_interest()
 Joi_account.print_receipt()
 
 # new account created to test
-test_account = Bank_Account("Joi The Awesome", 8927365, 82736982345, 857799795)
+test_account = Bank_Account("Joi The Awesome", 857799795)
 test_account.get_balance()
 test_account.add_interest()
 test_account.deposit(1000000)
